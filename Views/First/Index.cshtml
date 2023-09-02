@@ -1,0 +1,17 @@
+@model List<string>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>@ViewBag.key1</h1>
+<h1>@ViewBag.key2</h1>
+
+<ul class="list-group">
+    @foreach (var car in Model)
+    {
+        <li class="list-group-item">@car</li>
+    }
+
+</ul>
