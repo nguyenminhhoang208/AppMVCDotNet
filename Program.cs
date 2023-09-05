@@ -1,8 +1,16 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Net;
+using System.Text.RegularExpressions;
+using Controller_View.Areas.Product.Services;
+using Controller_View.ExtendMethods;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Routing.Constraints;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// services.AddSingleton<ProductService>();
+// services.AddSingleton<ProductService, ProductService>();
+// services.AddSingleton(typeof(ProductService));
+builder.Services.AddSingleton(typeof(ProductServices), typeof(ProductServices));
 
 
 
@@ -34,8 +42,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.AddStatusCodePage();
+
+app.UseAuthentication();
 app.UseAuthorization();
 // app.MapRazorPages();
+
 
 app.MapControllerRoute(
        name: "myroute",
