@@ -1,0 +1,16 @@
+@model string
+
+
+<div class="alert alert-danger" role="alert">
+    <h5>Bạn chắc chắn muốn xóa database: @Model </h5>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">
+            Xóa
+        </button>
+
+        <a asp-action="Index">Quản lý Db</a>
+
+
+    </form>
+</div>

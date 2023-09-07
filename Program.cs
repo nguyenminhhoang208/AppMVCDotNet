@@ -1,11 +1,17 @@
 ﻿using System.Net;
 using System.Text.RegularExpressions;
 using Controller_View.Areas.Product.Services;
+using Controller_View.Configs;
 using Controller_View.ExtendMethods;
+using Controller_View.Models;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Đăng ký AppDbContext
+builder.ConnectDatabase();
 
 // services.AddSingleton<ProductService>();
 // services.AddSingleton<ProductService, ProductService>();
